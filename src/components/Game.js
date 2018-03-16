@@ -3,10 +3,8 @@ import React from 'react';
 import Pancake from './Pancake';
 
 class Game extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.state = {
       time: undefined,
       pancakes: [],
@@ -16,7 +14,10 @@ class Game extends React.Component {
     };
   }
 
-  // TODO: create a componentWillMount() which will set the current time
+  // componentWillMount() will set the current time
+  componentWillMount() {
+    this.setCurrentTime()
+  }
 
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
